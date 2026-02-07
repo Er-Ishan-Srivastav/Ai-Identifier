@@ -1,81 +1,124 @@
-# AI Vision Assistant
+<div align="center">
 
-## Overview
+# 👁️ AI Vision Assistant — Real-Time Image Chatbot with TTS
 
-AI Vision Assistant is a modern desktop application that combines real-time camera feed with advanced AI vision capabilities. This application allows users to ask questions about what their camera sees and receive intelligent responses in both text and speech formats.
+### A Modern Desktop Application that combines Live Camera Vision + AI Chatbot + Text-to-Speech for Accessible Real-Time Understanding.
 
-## Features
+![Python](https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
+![PyQt5](https://img.shields.io/badge/PyQt5-GUI-41CD52?style=for-the-badge&logo=qt&logoColor=white)
+![OpenCV](https://img.shields.io/badge/OpenCV-27338e?style=for-the-badge&logo=opencv&logoColor=white)
+![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)
+![Transformers](https://img.shields.io/badge/Transformers-HuggingFace-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black)
 
-- **Real-time Camera Analysis**: Process live camera feed using computer vision
-- **Natural Language Interaction**: Ask questions about what the camera sees in plain language
-- **Text-to-Speech Responses**: Hear responses through integrated text-to-speech
-- **Modern UI**: Clean, responsive interface with dark mode design
-- **Non-blocking Architecture**: Multi-threaded design prevents UI freezing during processing
+</div>
 
-## Requirements
+---
 
+## 📖 Overview
+
+**AI Vision Assistant** is a modern desktop application designed to help users understand their surroundings using a **real-time camera feed**, an **AI vision-language model**, and **text-to-speech output**.
+
+The system captures an image from the live camera, generates an intelligent response (caption + explanation), and converts it into audio output, enabling fast and accessible interaction for:
+
+- Visually impaired users
+- Senior citizens
+- Users with low vision
+- Users with reading difficulties (e.g., dyslexia)
+
+---
+
+## 🚀 Key Features
+
+### 📷 1. Real-Time Camera Analysis
+- Captures images directly from a live camera feed
+- Supports real-world environments and dynamic scenes
+
+### 💬 2. Natural Language Interaction
+- Users can ask questions like:
+  - “What objects do you see?”
+  - “Describe this scene.”
+  - “What is written here?”
+- AI generates a human-friendly response
+
+### 🔊 3. Text-to-Speech (TTS) Responses
+- Converts the AI answer into speech output
+- Enables hands-free accessibility and faster understanding
+
+### 🖥️ 4. Modern Desktop UI (Dark Theme)
+- Clean, responsive PyQt interface
+- User-friendly design for non-technical users
+
+### ⚡ 5. Non-Blocking Multi-Threaded Architecture
+- Camera runs in its own thread
+- AI inference runs in a separate worker thread
+- Prevents UI freezing during heavy processing
+
+---
+
+## 🧰 Tech Stack
+
+| Layer | Technology |
+|------|------------|
+| UI | PyQt5 |
+| Computer Vision | OpenCV |
+| AI Model | LLaVA (Vision-Language Model) |
+| Deep Learning | PyTorch |
+| NLP Framework | Transformers |
+| Speech | Text-to-Speech (TTS Engine) |
+
+---
+
+## 🏗️ System Architecture
+
+The workflow follows a real-time pipeline:
+
+1. **Start**
+2. **Capture Image**
+3. **Preprocess Image**
+4. **LLaVA Model Processing**
+5. **Generate Text**
+6. **Generate Audio with TTS**
+7. **Provide Output to User**
+8. **User Feedback Loop (Refine if needed)**
+
+---
+
+## 🛠️ Installation & Setup
+
+### Prerequisites
 - Python 3.8+
-- PyQt5
-- PyTorch
-- Transformers
-- OpenCV
-- PIL (Python Imaging Library)
-- CUDA-compatible GPU (recommended for better performance)
+- Webcam / Camera Device
+- (Optional) CUDA GPU for faster inference
 
-## Installation
-
-1. Clone this repository:
+### 1. Clone the Repository
 ```bash
 git clone https://github.com/yourusername/ai-vision-assistant.git
 cd ai-vision-assistant
 ```
-
-2. Install dependencies:
+### 2. Install dependencies:
 ```bash
 pip install -r requirements.txt
 ```
 
-3. Download the tiny-llava model:
+### 3. Download the tiny-llava model:
 ```bash
 git clone https://huggingface.co/bczhou/tiny-llava-v1-hf
 ```
 
-4. Run the application:
+### 4. Run the application:
 ```bash
 python vision_assistant.py
 ```
+### 👥 Contributors 
+- **Ishan Srivastav** – *Testing & Documentation* (System Validation, Report Writing)
+- **Priyanshu Kumar Singh** – *Frontend & UI/UX* (PyQt Design, User Experience)
+- **Aditya Jaswal** – *Backend & AI Integration* (Model Implementation, System Architecture)
 
-## Usage
-
-1. Launch the application
-2. Ensure your camera can see the subject you want to ask about
-3. Type your question in the prompt field (e.g., "What objects do you see?")
-4. Click "Generate Response" or press Enter
-5. View the text response and listen to the spoken answer
-
-## Architecture
-
-The application uses a multi-threaded architecture to ensure responsive UI:
-- Camera capture runs in a dedicated thread
-- AI inference processing occurs in a separate worker thread
-- Text-to-speech generation happens in the background
-- PyQt5 signals and slots handle communication between threads
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## License
+### License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-## Acknowledgments
+### Acknowledgments
 
 - [Tiny-LLaVA Model](https://huggingface.co/bczhou/tiny-llava-v1-hf) for image understanding capabilities
 - [PyQt5](https://www.riverbankcomputing.com/software/pyqt/) for the UI framework
